@@ -66,8 +66,8 @@ jobs:
       - name: Save built App
         uses: actions/upload-artifact@v2
         with:
-          name: build
-          path: build
+          name: dist
+          path: dist
 
   deploy:
     runs-on: ubuntu-latest
@@ -76,12 +76,12 @@ jobs:
       - name: Get built App
         uses: actions/download-artifact@v2
         with:
-          name: build
-          path: build
+          name: dist
+          path: dist
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ github.token }}
-          publish_dir: ./build
+          publish_dir: ./dist
           force_orphan: true
