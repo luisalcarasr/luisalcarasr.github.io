@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "compounds": [
+    {
+      "name": "Development",
+      "configurations": ["React App", "Browser"],
+    },
+  ],
+  "configurations": [
+    {
+      "command": "npm i && clear && npm run dev",
+      "name": "React App",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "name": "Browser",
+      "type": "firefox",
+      "request": "launch",
+      "reAttach": true,
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}",
+    }
+  ]
+}
