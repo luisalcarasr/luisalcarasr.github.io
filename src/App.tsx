@@ -1,10 +1,12 @@
+import { About } from './components/About'
+import { Navbar } from './components/Navbar'
 import './App.scss'
 
 function App () {
-  const name = 'Luis Adrian'
   return (
     <div className="App">
-      { name }
+      <Navbar />
+      <About />
     </div>
   )
 }
