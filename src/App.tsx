@@ -5,6 +5,7 @@ import './App.scss'
 import { articles } from './articles'
 import { Grid } from 'semantic-ui-react'
 import { LastArticles } from './components/blog/LastArticles'
+import { Social } from './components/Social'
 
 function App () {
   const [article] = articles;
@@ -12,13 +13,14 @@ function App () {
     <div id="App">
       <Navbar />
       <Grid>
-        <Grid.Column width={4}>
+        <Grid.Column mobile={16} tablet={4} computer={4}>
           <About />
+          <Social />
         </Grid.Column>
-        <Grid.Column width={8}>
+        <Grid.Column mobile={16} tablet={12} computer={8}>
           <Article {...article} />
         </Grid.Column>
-        <Grid.Column width={4}>
+        <Grid.Column mobile={16} tablet={4} computer={4}>
           <LastArticles />
         </Grid.Column>
       </Grid>

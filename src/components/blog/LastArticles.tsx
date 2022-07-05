@@ -31,7 +31,7 @@ export const LastArticles = () => {
       <Header as="h3">Recent articles</Header>
       {
         lastArticles.map(({attributes}) => (
-          <Article {...attributes} />
+          <Article {...attributes} key={attributes.createdAt} />
         ))
       }
     </>
