@@ -25,8 +25,8 @@ const SocialLinks = () => {
 
 const Sections = () => (
   <>
-    <Menu.Item name='resume'>Resume</Menu.Item>
-    <Menu.Item name='portfolio'>Portfolio</Menu.Item>
+    <Menu.Item name='home'>Home</Menu.Item>
+    <Menu.Item name='projects'>Projects</Menu.Item>
     <Menu.Item name='blog'>Blog</Menu.Item>
   </>
 )
