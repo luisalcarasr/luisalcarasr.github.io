@@ -15,6 +15,7 @@
     "ecmaFeatures": {
       "jsx": true
     },
+    "project": "./tsconfig.json",
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
@@ -23,5 +24,10 @@
     "object-curly-spacing": ["error", "always"],
     "array-bracket-spacing": ["error", "always"],
     "react/jsx-curly-spacing": [2, { "when": "always", "children": true }]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
