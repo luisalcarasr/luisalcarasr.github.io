@@ -1,4 +1,4 @@
-import { Icon, Menu } from "semantic-ui-react"
+import { Icon, Menu } from 'semantic-ui-react'
 
 enum SocialNetworks {
   Twitter = 'https://twitter.com/luisalcarasr',
@@ -6,7 +6,7 @@ enum SocialNetworks {
   GitHub = 'https://github.com/luisalcarasr',
 }
 
-const SocialLinks = () => {
+const SocialLinks = (): JSX.Element => {
   const { open } = window
   return (
     <>
@@ -23,8 +23,8 @@ const SocialLinks = () => {
   )
 }
 
-export const Social = () => (
-  <Menu widths={3}>
+export const Social = (): JSX.Element => (
+  <Menu widths={ 3 }>
     <SocialLinks />
   </Menu>
 )

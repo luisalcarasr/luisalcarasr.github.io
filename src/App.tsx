@@ -7,20 +7,20 @@ import { Grid } from 'semantic-ui-react'
 import { LastArticles } from './components/blog/LastArticles'
 import { Social } from './components/Social'
 
-function App () {
-  const [article] = articles;
+const App = (): JSX.Element => {
+  const [ article ] = articles
   return (
     <div id="App">
       <Navbar />
       <Grid>
-        <Grid.Column mobile={16} tablet={4} computer={4}>
+        <Grid.Column mobile={ 16 } tablet={ 4 } computer={ 4 }>
           <About />
           <Social />
         </Grid.Column>
-        <Grid.Column mobile={16} tablet={12} computer={8}>
-          <Article {...article} />
+        <Grid.Column mobile={ 16 } tablet={ 12 } computer={ 8 }>
+          <Article { ...article } />
         </Grid.Column>
-        <Grid.Column mobile={16} tablet={4} computer={4}>
+        <Grid.Column mobile={ 16 } tablet={ 4 } computer={ 4 }>
           <LastArticles />
         </Grid.Column>
       </Grid>

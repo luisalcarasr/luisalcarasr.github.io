@@ -1,6 +1,6 @@
 import { Menu } from 'semantic-ui-react'
 
-const Sections = () => (
+const Sections = (): JSX.Element => (
   <>
     <Menu.Item name='home'>Home</Menu.Item>
     <Menu.Item name='projects'>Projects</Menu.Item>
@@ -8,7 +8,7 @@ const Sections = () => (
   </>
 )
 
-export const Navbar = () => (
+export const Navbar = (): JSX.Element => (
   <Menu>
     <Menu.Menu position='left'>
       <Sections />

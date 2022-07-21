@@ -1,7 +1,7 @@
-import moment from "moment"
-import { Card, Grid, Header, Image } from "semantic-ui-react"
+import moment from 'moment'
+import { Card, Image } from 'semantic-ui-react'
 
-export const About = () => (
+export const About = (): JSX.Element => (
   <Card fluid>
     <Image src='https://avatars.githubusercontent.com/u/31008259' circular />
     <Card.Content>
