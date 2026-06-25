@@ -26,7 +26,7 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 11
+          version: latest
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -35,7 +35,13 @@ jobs:
           cache: pnpm
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile && pnpm approve-builds --all
+        run: pnpm install --frozen-lockfile || true
+
+      - name: Approve builds
+        run: pnpm approve-builds --all
+
+      - name: Finalize install
+        run: pnpm install --frozen-lockfile
 
       - name: Build with Astro
         run: pnpm build
