@@ -1,0 +1,144 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Luis Alcaras',
+  description = 'Software Engineer. Linux enthusiast.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+      }
+
+      /* GitHub Dark Colorblind theme tokens (Primer) */
+      :root {
+        --bg:            #0d1117; /* canvas.default */
+        --bg-panel:      #161b22; /* canvas.subtle */
+        --fg:            #e6edf3; /* fg.default */
+        --fg-muted:      #848d97; /* fg.muted */
+        --accent:        #79b8ff; /* accent.fg — soft blue, readable */
+        --border:        #30363d; /* border.default */
+        --border-accent: #388bfd; /* accent.emphasis */
+        --grid-line: rgba(255, 255, 255, 0.04);
+        --font-mono: 'IBM Plex Mono', 'Cascadia Code', 'Fira Code', monospace;
+      }
+
+      @keyframes grid-scroll {
+        from { background-position: 0 0, 0 0; }
+        to   { background-position: 0 -32px, 0 -32px; }
+      }
+
+      html {
+        background-color: var(--bg);
+        background-image:
+          linear-gradient(var(--grid-line) 1px, transparent 1px),
+          linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+        background-size: 32px 32px;
+        animation: grid-scroll 6s linear infinite;
+        color: var(--fg);
+        font-family: var(--font-mono);
+        font-size: 15px;
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body {
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 5vh 5vw;
+      }
+
+      .skip-link {
+        position: absolute;
+        top: -100%;
+        left: 0.5rem;
+        padding: 0.35rem 0.75rem;
+        background: var(--accent);
+        color: var(--bg);
+        font-size: 0.8rem;
+        z-index: 100;
+        transition: top 0.1s;
+      }
+
+      .skip-link:focus {
+        top: 0.5rem;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+        position: relative;
+        display: inline;
+      }
+
+      a:hover {
+        background-color: var(--accent);
+        color: var(--bg);
+        text-decoration: none;
+      }
+
+      ::selection {
+        background-color: var(--accent);
+        color: var(--bg);
+      }
+
+      .keybindings {
+        position: fixed;
+        bottom: 1rem;
+        right: 1.25rem;
+        display: flex;
+        gap: 0.85rem;
+        font-size: 0.7rem;
+        color: var(--fg-muted);
+        font-family: var(--font-mono);
+        opacity: 0.8;
+        user-select: none;
+        pointer-events: none;
+      }
+
+      kbd {
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        background: var(--border);
+        color: var(--fg);
+        padding: 0 0.25rem;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <slot />
+    <div class="keybindings">
+      <span><kbd>h</kbd><kbd>l</kbd> tabs</span>
+      <span><kbd>j</kbd><kbd>k</kbd> move</span>
+      <span><kbd>gg</kbd> top</span>
+      <span><kbd>G</kbd> bottom</span>
+      <span><kbd>Tab</kbd> socials</span>
+    </div>
+  </body>
+</html>

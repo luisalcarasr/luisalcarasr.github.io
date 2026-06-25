@@ -1,0 +1,662 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const start = new Date(2017, 7); // August 2017
+const now = new Date();
+const years = now.getFullYear() - start.getFullYear() - (now < new Date(now.getFullYear(), 7) ? 1 : 0);
+---
+
+<Layout>
+  <main id="main-content">
+    <div class="panel">
+      <div class="panel-bar">
+        <span class="panel-title">luis@arch:~</span>
+        <span class="panel-controls">[-][+][x]</span>
+      </div>
+      <div class="panel-body">
+        <div class="profile-header">
+          <img
+            class="avatar"
+            src="https://avatars.githubusercontent.com/u/31008259?v=4"
+            alt="Luis Alcaras"
+            width="88"
+            height="88"
+          />
+          <div class="profile-info">
+            <h1>Luis Alcaras</h1>
+            <p class="tagline">Software Engineer · Linux enthusiast</p>
+            <p class="bio">{years} years of experience <span id="typed-word"></span><span class="cursor">▋</span></p>
+          </div>
+        </div>
+
+        <div class="tabs">
+          <div class="tab-bar" role="tablist">
+            <button class="tab-btn active" role="tab" data-tab="education">education</button>
+            <button class="tab-btn" role="tab" data-tab="jobs">jobs</button>
+            <button class="tab-btn" role="tab" data-tab="blog">blog</button>
+            <button class="tab-btn" role="tab" data-tab="hobbies">hobbies</button>
+          </div>
+
+          <div class="tab-panel active" id="tab-education" role="tabpanel">
+            <ul class="entry-list">
+              <li class="entry">
+                <div class="entry-header">
+                  <span class="entry-title">B.E. in Strategic Information Systems</span>
+                  <span class="entry-date">2014 – 2019</span>
+                </div>
+                <span class="entry-sub"><a href="https://upa.edu.mx/" target="_blank" rel="noopener">Polytechnic University of Aguascalientes</a></span>
+              </li>
+              <li class="entry">
+                <div class="entry-header">
+                  <span class="entry-title">Technical Degree in Informatics</span>
+                  <span class="entry-date">2011 – 2014</span>
+                </div>
+                <span class="entry-sub"><a href="https://cecytejalisco.edu.mx/" target="_blank" rel="noopener">College of Scientific and Technological Studies</a></span>
+              </li>
+              <li class="entry">
+                <div class="entry-header">
+                  <span class="entry-title">Technical Degree in Programming Analyst</span>
+                  <span class="entry-date">2009 – 2011</span>
+                </div>
+                <span class="entry-sub">Institute of Computing and Systems of Aguascalientes</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="tab-panel" id="tab-jobs" role="tabpanel">
+            <ul class="entry-list">
+              <li class="entry">
+                <div class="entry-header">
+                  <span class="entry-title"><a href="https://www.f5.com/" target="_blank" rel="noopener">F5</a></span>
+                  <span class="entry-date">Jul 2024 – Present</span>
+                </div>
+                <span class="entry-sub">Software Engineer · Aguascalientes, Mexico</span>
+              </li>
+              <li class="entry">
+                <div class="entry-header">
+                  <span class="entry-title"><a href="https://www.improving.com/" target="_blank" rel="noopener">Improving</a></span>
+                  <span class="entry-date">May 2021 – Jul 2024</span>
+                </div>
+                <span class="entry-sub">Software Engineer · Aguascalientes, Mexico</span>
+              </li>
+              <li class="entry">
+                <div class="entry-header">
+                  <span class="entry-title"><a href="https://www.softtek.com/" target="_blank" rel="noopener">Softtek</a></span>
+                  <span class="entry-date">Jan 2019 – May 2021</span>
+                </div>
+                <span class="entry-sub">Software Engineer · Aguascalientes, Mexico</span>
+              </li>
+              <li class="entry">
+                <div class="entry-header">
+                  <span class="entry-title"><a href="https://cceo.com.mx/" target="_blank" rel="noopener">CCEO - Software Development</a></span>
+                  <span class="entry-date">Aug 2017 – Jan 2019</span>
+                </div>
+                <span class="entry-sub">Software Engineer · Aguascalientes, Mexico</span>
+              </li>
+              <li class="entry">
+                <div class="entry-header">
+                  <span class="entry-title"><a href="https://www.jmromo.com/" target="_blank" rel="noopener">J.M. Romo</a></span>
+                  <span class="entry-date">Jan 2014 – Jun 2014</span>
+                </div>
+                <span class="entry-sub">IT Support Technician · Aguascalientes, Mexico</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="tab-panel" id="tab-blog" role="tabpanel">
+            <ul class="entry-list">
+              <li class="entry">
+                <div class="entry-header">
+                  <span class="entry-title"><a href="#" target="_blank" rel="noopener">Why I switched to Arch</a></span>
+                  <span class="entry-date">2025</span>
+                </div>
+                <span class="entry-sub">Notes on a minimal Linux setup for development.</span>
+              </li>
+              <li class="entry">
+                <div class="entry-header">
+                  <span class="entry-title"><a href="#" target="_blank" rel="noopener">Vim keybindings on the web</a></span>
+                  <span class="entry-date">2025</span>
+                </div>
+                <span class="entry-sub">Adding j/k/h/l navigation to a static site.</span>
+              </li>
+              <li class="entry">
+                <div class="entry-header">
+                  <span class="entry-title"><a href="#" target="_blank" rel="noopener">Building with Astro</a></span>
+                  <span class="entry-date">2024</span>
+                </div>
+                <span class="entry-sub">A terminal-style portfolio from scratch.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="tab-panel" id="tab-hobbies" role="tabpanel">
+            <ul class="entry-list">
+              <li class="entry">
+                <span class="entry-title">Linux</span>
+                <span class="entry-sub">Arch user. Keeps the desktop minimal.</span>
+              </li>
+              <li class="entry">
+                <span class="entry-title">Anime &amp; J-POP</span>
+                <span class="entry-sub">Listens to J-POP while writing code.</span>
+              </li>
+              <li class="entry">
+                <span class="entry-title">Open Source</span>
+                <span class="entry-sub">Contributes to personal and community projects on GitHub.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <nav class="social-links">
+    <a href="https://github.com/luisalcarasr/" target="_blank" rel="noopener">github</a>
+    <a href="https://www.linkedin.com/in/luisalcarasr/" target="_blank" rel="noopener">linkedin</a>
+    <a href="https://twitter.com/LuisAlcarasR" target="_blank" rel="noopener">twitter</a>
+    <a href="https://www.twitch.tv/luisalcarasr" target="_blank" rel="noopener">twitch</a>
+    <a href="https://www.youtube.com/channel/UCXWyKXFnujK9qu0GDt7pLrA" target="_blank" rel="noopener">youtube</a>
+    <a href="https://www.instagram.com/luisalcarasr/" target="_blank" rel="noopener">instagram</a>
+  </nav>
+</Layout>
+
+<style>
+  main {
+    width: 960px;
+    height: 720px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* TUI panel */
+  .panel {
+    border: 1px solid var(--border-accent);
+    background-color: var(--bg-panel);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .panel-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.75rem;
+    height: 1.75rem;
+    background-color: var(--border-accent);
+    color: var(--bg);
+    font-size: 0.8rem;
+    font-weight: 500;
+    user-select: none;
+  }
+
+  .panel-controls {
+    letter-spacing: 0.05em;
+    opacity: 0.7;
+  }
+
+  .panel-body {
+    padding: 2rem 2.25rem 2.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+  }
+
+  /* Profile header */
+  .profile-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .tagline {
+    font-size: 0.8rem;
+    color: var(--fg-muted);
+    max-width: none;
+    line-height: 0;
+  }
+
+  .bio {
+    font-size: 0.8rem;
+    color: var(--fg);
+    line-height: 0;
+    margin-top: 0.5rem;
+  }
+
+  .avatar {
+    display: block;
+    width: 88px;
+    height: 88px;
+    border: 1px solid var(--border-accent);
+    flex-shrink: 0;
+    image-rendering: auto;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: -0.02em;
+    color: var(--accent);
+    line-height: 0;
+  }
+
+  /* Prose */
+  p {
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: var(--fg);
+  }
+
+  p a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  p.muted {
+    color: var(--fg-muted);
+    font-style: italic;
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+    margin-top: 0.25rem;
+  }
+
+  /* Tabs */
+  .tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--border);
+    flex: 1;
+    min-height: 0;
+  }
+
+  .tab-bar {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .tab-btn {
+    background: none;
+    border: none;
+    border-right: 1px solid var(--border);
+    color: var(--fg-muted);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    padding: 0.35rem 0.85rem;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.1s, background-color 0.1s;
+  }
+
+  .tab-btn:last-child {
+    border-right: none;
+  }
+
+  .tab-btn:hover {
+    color: var(--fg);
+    background-color: var(--bg);
+  }
+
+  .tab-btn.active {
+    color: var(--accent);
+    background-color: var(--bg-panel);
+  }
+
+  .tab-btn:focus::before,
+  .tab-btn:focus-visible::before {
+    content: '> ';
+  }
+
+  .tab-panel {
+    display: none;
+    padding: 0.75rem 0;
+  }
+
+  .tab-panel.active {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+  }
+
+  /* Entry list (used inside tab panels) */
+  .entry-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 1rem;
+    margin: 0;
+  }
+
+  .entry {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    padding: 1rem 1rem;
+    position: relative;
+  }
+
+  .entry::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent);
+    font-size: 0.85rem;
+    line-height: 0;
+  }
+
+  .entry:focus-within::before,
+  .entry:focus::before {
+    content: '>';
+  }
+
+  .entry:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .entry:first-child {
+    padding-top: 0;
+  }
+
+  .entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+
+  .entry-title {
+    font-size: 0.85rem;
+    color: var(--fg);
+    font-weight: 500;
+  }
+
+  .entry-title a {
+    color: var(--fg);
+  }
+
+  .entry-date {
+    font-size: 0.75rem;
+    color: var(--fg-muted);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .entry-sub {
+    font-size: 0.75rem;
+    color: var(--fg-muted);
+    line-height: 1.4;
+  }
+
+  .entry-sub a {
+    color: var(--fg-muted);
+  }
+
+  /* Social links */
+  .social-links {
+    display: flex;
+    gap: 1.25rem;
+    margin-top: 0.75rem;
+  }
+
+  .social-links a {
+    font-size: 0.75rem;
+    color: var(--fg-muted);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    transition: color 0.1s;
+    position: relative;
+  }
+
+  .social-links a:hover,
+  .social-links a:focus-visible {
+    color: var(--accent);
+  }
+
+  .social-links a:focus-visible::before {
+    content: '> ';
+    color: var(--accent);
+  }
+
+  /* Typing effect */
+  #typed-word {
+    color: var(--accent);
+  }
+
+  .cursor {
+    color: var(--accent);
+    animation: blink 1s step-start infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+  }
+
+  /* Keyboard focus — no outlines; > indicator used everywhere */
+  :focus,
+  :focus-visible {
+    outline: none;
+  }
+
+  /* Responsive (keep at end) */
+  @media (max-width: 960px) {
+    main {
+      width: 100%;
+      height: 100dvh;
+    }
+
+    .panel-body {
+      padding: 1.5rem 1.25rem 1.75rem;
+    }
+
+    .profile-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 0.85rem;
+    }
+  }
+</style>
+
+<script>
+  const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('.tab-btn'));
+  const panels = document.querySelectorAll<HTMLElement>('.tab-panel');
+
+  // ── Tab switching ────────────────────────────────────────────────────────
+  function activate(btn: HTMLButtonElement) {
+    buttons.forEach((b) => {
+      b.classList.remove('active');
+      b.setAttribute('tabindex', '-1');
+      b.setAttribute('aria-selected', 'false');
+    });
+    panels.forEach((p) => p.classList.remove('active'));
+
+    btn.classList.add('active');
+    btn.setAttribute('tabindex', '0');
+    btn.setAttribute('aria-selected', 'true');
+    const target = document.getElementById(`tab-${btn.dataset.tab}`);
+    target?.classList.add('active');
+  }
+
+  function activeTabIndex() {
+    return buttons.findIndex((b) => b.classList.contains('active'));
+  }
+
+  function switchTab(dir: 1 | -1) {
+    const next = buttons[(activeTabIndex() + dir + buttons.length) % buttons.length];
+    activate(next);
+    next.focus();
+  }
+
+  buttons.forEach((btn, i) => {
+    btn.setAttribute('aria-selected', btn.classList.contains('active') ? 'true' : 'false');
+    btn.setAttribute('tabindex', btn.classList.contains('active') ? '0' : '-1');
+
+    btn.addEventListener('click', () => { activate(btn); btn.focus(); });
+
+    btn.addEventListener('keydown', (e) => {
+      let next: HTMLButtonElement | undefined;
+      if (e.key === 'ArrowRight' || e.key === 'l') next = buttons[(i + 1) % buttons.length];
+      if (e.key === 'ArrowLeft'  || e.key === 'h') next = buttons[(i - 1 + buttons.length) % buttons.length];
+      if (e.key === 'Home') next = buttons[0];
+      if (e.key === 'End')  next = buttons[buttons.length - 1];
+      if (next) { e.preventDefault(); activate(next); next.focus(); }
+    });
+  });
+
+  // ── Entry focus list ─────────────────────────────────────────────────────
+  function activeEntries(): HTMLElement[] {
+    const panel = document.querySelector<HTMLElement>('.tab-panel.active');
+    if (!panel) return [];
+    return Array.from(panel.querySelectorAll<HTMLElement>('.entry'));
+  }
+
+  function focusedEntryIndex(entries: HTMLElement[]): number {
+    return entries.findIndex((el) => el === document.activeElement || el.contains(document.activeElement));
+  }
+
+  function focusEntry(entries: HTMLElement[], idx: number) {
+    const entry = entries[idx];
+    if (!entry) return;
+    // Focus the first link inside, or the entry itself
+    const link = entry.querySelector<HTMLElement>('a');
+    (link ?? entry).focus();
+  }
+
+  // Make entries focusable (fallback when no link inside)
+  document.querySelectorAll<HTMLElement>('.entry').forEach((el) => {
+    if (!el.querySelector('a')) el.setAttribute('tabindex', '0');
+  });
+
+  // ── Global vim keybindings ───────────────────────────────────────────────
+  let ggPending = false;
+  let ggTimer: ReturnType<typeof setTimeout>;
+
+  document.addEventListener('keydown', (e) => {
+    // Ignore when typing in inputs
+    const tag = (e.target as HTMLElement).tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+
+    // h / l — switch tabs (only when focus is NOT on a tab button)
+    if (!buttons.includes(e.target as HTMLButtonElement)) {
+      if (e.key === 'l') { e.preventDefault(); switchTab(1);  return; }
+      if (e.key === 'h') { e.preventDefault(); switchTab(-1); return; }
+    }
+
+    const entries = activeEntries();
+    const idx     = focusedEntryIndex(entries);
+
+    // j — next entry
+    if (e.key === 'j') {
+      e.preventDefault();
+      focusEntry(entries, idx < 0 ? 0 : Math.min(idx + 1, entries.length - 1));
+      return;
+    }
+
+    // k — previous entry
+    if (e.key === 'k') {
+      e.preventDefault();
+      focusEntry(entries, idx < 0 ? entries.length - 1 : Math.max(idx - 1, 0));
+      return;
+    }
+
+    // G — last entry
+    if (e.key === 'G') {
+      e.preventDefault();
+      focusEntry(entries, entries.length - 1);
+      return;
+    }
+
+    // gg — first entry (double g)
+    if (e.key === 'g') {
+      if (ggPending) {
+        clearTimeout(ggTimer);
+        ggPending = false;
+        e.preventDefault();
+        focusEntry(entries, 0);
+      } else {
+        ggPending = true;
+        ggTimer = setTimeout(() => { ggPending = false; }, 400);
+      }
+      return;
+    }
+  });
+
+  // ── Typing effect ────────────────────────────────────────────────────────
+  const words = [
+    'shipping web applications.',
+    'crafting mobile applications.',
+    'automating CI/CD pipelines.',
+    'writing CLI tools.',
+    'building TUIs.',
+    'wiring MCP servers.',
+    'designing REST APIs.',
+    'managing GNU/Linux systems.',
+    'growing distributed teams.',
+  ];
+
+  const el = document.getElementById('typed-word')!;
+  const TYPE_SPEED   = 60;   // ms per char typed
+  const DELETE_SPEED = 35;   // ms per char deleted
+  const PAUSE_AFTER  = 1800; // ms to hold the completed word
+  const PAUSE_BEFORE = 300;  // ms before typing next word
+
+  let wordIdx  = 0;
+  let charIdx  = 0;
+  let deleting = false;
+
+  function tick() {
+    const word = words[wordIdx];
+
+    if (!deleting) {
+      charIdx++;
+      el.textContent = word.slice(0, charIdx);
+      if (charIdx === word.length) {
+        deleting = true;
+        setTimeout(tick, PAUSE_AFTER);
+        return;
+      }
+      setTimeout(tick, TYPE_SPEED);
+    } else {
+      charIdx--;
+      el.textContent = word.slice(0, charIdx);
+      if (charIdx === 0) {
+        deleting = false;
+        wordIdx  = (wordIdx + 1) % words.length;
+        setTimeout(tick, PAUSE_BEFORE);
+        return;
+      }
+      setTimeout(tick, DELETE_SPEED);
+    }
+  }
+
+  setTimeout(tick, PAUSE_BEFORE);
+</script>
